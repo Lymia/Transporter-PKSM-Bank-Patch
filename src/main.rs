@@ -3,7 +3,6 @@
 
 mod game_fs;
 mod pksm;
-mod utils;
 
 use core::arch::asm;
 use core::panic::PanicInfo;

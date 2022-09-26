@@ -45,12 +45,9 @@ impl Bank {
 
     self.file.read(0, &mut buffer);
 
-    unsafe {
-      // Not pretty, but doesn't need another crate, try_into, or multiple file reads
-      // Although I'd love another solution that still fits those requirements
-      return super::utils::slice_compare(&buffer[..8], &BANK_HEADER_MAGIC)
-        && super::utils::slice_compare(&buffer[8..], &SUPPORTED_BANK_VERSION);
-    }
+    // Not pretty, but doesn't need another crate, try_into, or multiple file reads
+    // Although I'd love another solution that still fits those requirements
+    return buffer[..8] == BANK_HEADER_MAGIC && &buffer[8..] == &SUPPORTED_BANK_VERSION;
   }
 
   fn get_slot_offset(&self, slot: u8) -> u64 {
