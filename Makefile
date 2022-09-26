@@ -1,6 +1,6 @@
 CARGO = cargo
-RELEASE_BUILD = target/arm-unknown-linux-gnueabi/release/transporter_pksm_patch
-OBJCOPY = $(DEVKITARM)/bin/arm-none-eabi-objcopy
+RELEASE_BUILD = target/armv6k-nintendo-3ds/release/transporter_pksm_patch.elf
+OBJCOPY = arm-none-eabi-objcopy
 
 .PHONY: all build clean
 

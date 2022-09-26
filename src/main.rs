@@ -1,4 +1,3 @@
-#![feature(asm)]
 #![no_main]
 #![no_std]
 
@@ -6,6 +5,7 @@ mod game_fs;
 mod pksm;
 mod utils;
 
+use core::arch::asm;
 use core::panic::PanicInfo;
 
 #[panic_handler]

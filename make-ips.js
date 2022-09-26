@@ -6,13 +6,13 @@ const exec = promisify(require('child_process').exec);
 
 // Anytime code needs to jump to the patch, it should jump to this offset
 const PATCH_ENTRYPOINT_OFFSET = 0x18d5f0;
-const READELF = path.join(process.env.DEVKITARM, 'bin', 'arm-none-eabi-readelf');
+const READELF = 'arm-none-eabi-readelf'
 const CODE_IPS_PATH = 'code.ips';
 const RUST_BINARY_PATH = path.join(
   'target',
-  'arm-unknown-linux-gnueabi',
+  'armv6k-nintendo-3ds',
   'release',
-  'transporter_pksm_patch',
+  'transporter_pksm_patch.elf',
 );
 const RUST_TEXT_PATH = `${RUST_BINARY_PATH}.text`;
 const RUST_RODATA_PATH = `${RUST_BINARY_PATH}.rodata`;
